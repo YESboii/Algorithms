@@ -1,0 +1,45 @@
+1. Monotonic Stack
+Definition: A monotonic stack is a stack that maintains its elements in a monotonically increasing or decreasing order.
+
+Monotonic Increasing Stack: The top of the stack always contains the smallest element.
+ When you push an element onto the stack, you remove all elements from the top of the stack that are
+  greater than the new element. This ensures that all elements in the stack are in increasing order
+   from the bottom to the top.
+
+Monotonic Decreasing Stack: The top of the stack always contains the largest element.
+ When you push an element onto the stack, you remove all elements from the top of the stack that are
+  smaller than the new element. This keeps the stack in decreasing order.
+
+Intuition: Monotonic stacks are used when you need to
+ efficiently find the next greater or smaller element for each element in an array.
+  The idea is that as you iterate through the array, you maintain a stack of indices where the
+  values at those indices are either consistently increasing or decreasing.
+
+Common Problems:
+
+Next Greater Element
+Next Smaller Element
+Largest Rectangle in Histogram
+Stock Span Problem
+
+
+
+
+
+2. Monotonic Queue
+Definition: A monotonic queue is a queue that maintains its elements in a monotonically
+increasing or decreasing order, similar to a monotonic stack.
+
+Monotonic Increasing Queue: The front of the queue always contains the smallest element.
+Monotonic Decreasing Queue: The front of the queue always contains the largest element.
+Intuition: Monotonic queues are used primarily in sliding window problems where you need
+ to keep track of the maximum or minimum element in the current window/range. The queue maintains elements
+  in a way that allows quick access to the maximum or minimum value, ensuring that as elements enter
+   and exit the window, the maximum or minimum is always accessible.
+
+Common Problems:
+
+Sliding Window Maximum
+Sliding Window Minimum
+Maximum in a Range Query
+

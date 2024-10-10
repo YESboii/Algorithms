@@ -1,0 +1,43 @@
+LinkedList Overview
+A LinkedList is a data structure that stores data in nodes. Each node contains:
+
+Value: The actual data or value of the node.
+References:
+Singly LinkedList: Each node has a reference to the next node.
+Doubly LinkedList: Each node has references to both the next node and the previous node.
+Non-Contiguous Memory: Nodes are scattered in memory, unlike arrays that use contiguous memory allocation.
+
+Advantages
+Efficient Addition/Deletion:
+
+Adding or removing elements at the beginning (or end, in a doubly linked list)
+is efficient and generally O(1), as it only involves updating references.
+There is no need to shift elements as in arrays, which makes operations
+ at the start or middle of the list more efficient compared to arrays.
+
+
+Dynamic Size:
+
+The LinkedList grows or shrinks dynamically without the need for resizing,
+ which can be an advantage over arrays that may need resizing when they grow.
+
+Disadvantages
+Access Time:
+
+Accessing an element by index is O(n) in time complexity,
+ as it requires traversing the list from the start (or end, in case of doubly linked lists)
+  to the desired index. This is slower compared to arrays where access is O(1).
+
+Memory Overhead:
+
+Each node requires extra memory to store references to the next (and possibly previous) nodes,
+ which adds to the overall memory consumption compared to arrays.
+
+Poor Cache Performance:
+Due to non-contiguous memory allocation, LinkedList often has poorer cache performance.
+ Modern CPUs are optimized for accessing contiguous memory blocks, so scattered nodes can result
+  in more cache misses and slower performance.
+
+In summary, while LinkedList offers advantages in terms of dynamic sizing and
+efficient insertions/deletions, its performance for random access and memory overhead
+can be less favorable compared to other data structures like arrays.
