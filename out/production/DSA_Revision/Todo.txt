@@ -1,3 +1,3 @@
 bs - 2d, kth missing no
-stacks and queues - impl queu circluar & deque, lFU, polish notation infix postfix.
-
+stacks and queues - impl queu circluar & deque, lFU
+Longest valid p, score of p
