@@ -4,3 +4,10 @@ Longest valid p, score of p
 355.Design twitter
 Meeting Room III
 1526
+1249
+next permutation
+2044
+https://practice.geeksforgeeks.org/contest/gfg-weekly-177-rated-contest/discussions
+2045
+https://www.geeksforgeeks.org/problems/knight-walk4521/1
+249. Group shifted Strings
