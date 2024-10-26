@@ -11,3 +11,20 @@ https://practice.geeksforgeeks.org/contest/gfg-weekly-177-rated-contest/discussi
 2045
 https://www.geeksforgeeks.org/problems/knight-walk4521/1
 249. Group shifted Strings
+Tower of Hanoi(Recursive + iterative)
+Hamiltonian cycle
+Branch & bound(TSP)
+Graph Coloring Problem
+A Search*
+Ford-Fulkerson Method:
+Huffman Coding
+Gas Station Problem
+Floyd Warshall
+---------UF--------------
+684
+1202
+2421
+--------------------------
+133
+Euler circuit
+3203
