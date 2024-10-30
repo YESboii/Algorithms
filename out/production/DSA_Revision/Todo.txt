@@ -5,6 +5,7 @@ Longest valid p, score of p
 Meeting Room III
 1526
 1249
+819
 next permutation
 2044
 https://practice.geeksforgeeks.org/contest/gfg-weekly-177-rated-contest/discussions
@@ -12,18 +13,33 @@ https://practice.geeksforgeeks.org/contest/gfg-weekly-177-rated-contest/discussi
 https://www.geeksforgeeks.org/problems/knight-walk4521/1
 249. Group shifted Strings
 Tower of Hanoi(Recursive + iterative)
-Hamiltonian cycle
 Branch & bound(TSP)
-Graph Coloring Problem
-A Search*
-Ford-Fulkerson Method:
-Huffman Coding
 Gas Station Problem
+Huffman Coding
+--------Graphs------------------
+Graph Coloring Problem
+Ford-Fulkerson Method:
+Hamiltonian cycle
 Floyd Warshall
+Word Ladder II
+A Search*
+310
+399
+684
+685
+1129
+997
+765
+753
+1568
+Find the city with the smallest number of neighbors in a threshold distance
 ---------UF--------------
 684
 1202
 2421
 --------------------------
-133
-Euler circuit
+euler tour in a binary tree
+3203
+2097 (Euler circuit)
+//https://leetcode.com/discuss/interview-question/5975642/amazon-oa
+//https://leetcode.com/discuss/interview-question/5979200/amazon-oa-sde-ii

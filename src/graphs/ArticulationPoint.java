@@ -1,81 +1,52 @@
 package graphs;
-import java.util.*;
 
-class RailwayArticulationPoints {
-    private int time = 0;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+//https://www.geeksforgeeks.org/problems/articulation-point2616/1
+public class ArticulationPoint {
 
-    public void dfs(int u, boolean[] visited, int[] discovery, int[] low, int parent, Map<Integer, List<Integer>> graph, boolean[] articulationPoints) {
-        visited[u] = true;
-        discovery[u] = low[u] = ++time;
-        int children = 0;
+    public ArrayList<Integer> articulationPoints(int V,ArrayList<ArrayList<Integer>> adj)
+    {
+        int []disc = new int[V];
+        Arrays.fill(disc, -1);
+        int []low = new int[V];
+        int []time = {0};
+        ArrayList<Integer> aps = new ArrayList<>();
+        boolean []isAp = new boolean[V];
+        for(int i = 0;i < V;i++){
+            if(disc[i] == -1){
+                dfs(i, disc, low, time, adj, isAp, -1);
 
-        for (int v : graph.get(u)) {
-            if (!visited[v]) {
-                children++;
-                dfs(v, visited, discovery, low, u, graph, articulationPoints);
+            }
 
+        }
+        for(int i = 0; i < V;i++){
+            if(isAp[i]) aps.add(i);
+        }
+        if(aps.size() == 0) return new ArrayList<>(List.of(-1));
+        return aps;
+    }
+    private void dfs(int u, int []disc, int []low, int []time, ArrayList<ArrayList<Integer>> adj,
+                     boolean []isAp, int parent){
+        low[u] = disc[u] = time[0]++;
+        int subGraphs = 0;
+        for (int v : adj.get(u)){
+            if(disc[v] == -1){
+                subGraphs++;
+                dfs(v, disc, low, time, adj, isAp, u);
                 low[u] = Math.min(low[u], low[v]);
-
-                if (parent != -1 && low[v] >= discovery[u]) {
-                    articulationPoints[u] = true;
-                }
-
-                if (parent == -1 && children > 1) {
-                    articulationPoints[u] = true;
+                if(parent != -1 && low[v] >= disc[u]){
+                    //2nd case: No vertex starting from v and its descendants
+                    //that can reach ANCESTORS OF U, REACHABILITY TO U IS NOT IMPORTANT
+                    //AS BY DEFITION OF AP, IT WILL BE REMOVED. SO EVEN IF THE SUBGRAPH
+                    //FROM V CAN REACH U U WILL STILL BE AN AP
+                    isAp[u] = true;
                 }
             } else if (v != parent) {
-                low[u] = Math.min(low[u], discovery[v]);
+                low[u] = Math.min(low[u], disc[v]);
             }
         }
-    }
-
-    public List<Integer> findArticulationPoints(Map<Integer, List<Integer>> graph, int n) {
-        boolean[] visited = new boolean[n];
-        int[] discovery = new int[n];
-        int[] low = new int[n];
-        boolean[] articulationPoints = new boolean[n];
-
-        for (int i = 0; i < n; i++) {
-            if (!visited[i]) {
-                dfs(i, visited, discovery, low, -1, graph, articulationPoints);
-            }
-        }
-
-        List<Integer> result = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            if (articulationPoints[i]) {
-                result.add(i);
-            }
-        }
-        return result;
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter the number of railway stations (vertices): ");
-        int n = scanner.nextInt();
-
-        System.out.print("Enter the number of direct train routes (edges): ");
-        int m = scanner.nextInt();
-
-        Map<Integer, List<Integer>> graph = new HashMap<>();
-        for (int i = 0; i < n; i++) {
-            graph.put(i, new ArrayList<>());
-        }
-
-        System.out.println("Enter the edges (format: u v): ");
-        for (int i = 0; i < m; i++) {
-            int u = scanner.nextInt();
-            int v = scanner.nextInt();
-            graph.get(u).add(v);
-            graph.get(v).add(u);
-        }
-
-        RailwayArticulationPoints rap = new RailwayArticulationPoints();
-        List<Integer> articulationPoints = rap.findArticulationPoints(graph, n);
-
-        System.out.println("Articulation Points: " + articulationPoints);
+        if(parent == -1 && subGraphs > 1) isAp[u] = true;
     }
 }
-

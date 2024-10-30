@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
-//https://www.geeksforgeeks.org/problems/strongly-connected-components-kosarajus-algo/1
+//directed graphs-
+//https://www.geeksforgeeks.org/problems/strongly-connected-component-tarjanss-algo-1587115621/1
 public class SCCs {
     public static void main(String[] args) {
         int vertices = 7;
@@ -48,10 +49,13 @@ public class SCCs {
                 tarjan(v, disc, low, inPath, stack, time, adj);
                 low[u] = Math.min(low[u], low[v]); // to check if it's descendant can reach a
                 //vertex with a lower discovery time,i.e, ancestors of u
+
             } else if (inPath[v]) {
-                low[u] = Math.min(low[u], disc[v]);
+                low[u] = Math.min(low[u], disc[v]);// back edge
             }
         }
+        System.out.println(Arrays.toString(inPath));
+        System.out.println(stack);
         if(disc[u] == low[u]){
             System.out.print("SCC: ");
             while (true){
@@ -62,5 +66,6 @@ public class SCCs {
             }
             System.out.println();
         }
+        System.out.println("-------------------------------");
     }
 }
