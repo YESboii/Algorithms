@@ -7,6 +7,7 @@ Meeting Room III
 1249
 819
 next permutation
+698 ---> MUST_DO
 2044
 https://practice.geeksforgeeks.org/contest/gfg-weekly-177-rated-contest/discussions
 2045
