@@ -1,4 +1,4 @@
-package dynamic_programming;
+package dynamic_programming.grids;
 //https://www.geeksforgeeks.org/problems/geeks-training/1
 public class PaintHouse {
     public static void main(String[] args) {
