@@ -6,7 +6,7 @@ import java.util.List;
 public class PalindromePartitioning {
 
     public static void main(String[] args) {
-        System.out.println(generatePP("aaa"));
+        System.out.println(generatePP("geeks"));
     }
     static List<List<String>> generatePP(String s){
         List<List<String>> ans = new ArrayList<>();

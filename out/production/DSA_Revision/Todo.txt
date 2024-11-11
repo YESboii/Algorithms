@@ -49,5 +49,25 @@ euler tour in a binary tree
 //https://leetcode.com/discuss/interview-question/5975642/amazon-oa
 //https://leetcode.com/discuss/interview-question/5979200/amazon-oa-sde-ii
 -----------------------DP-------------------------------------------------------------
+
 Todo LCS Print All LCS: https://www.geeksforgeeks.org/problems/print-all-lcs-sequences3413/1
 https://www.geeksforgeeks.org/problems/longest-repeating-and-non-overlapping-substring3421/1
+https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
+https://leetcode.com/problems/basic-calculator-ii/description/
+https://leetcode.com/problems/palindrome-permutation/
+https://leetcode.com/problems/insert-delete-getrandom-o1/
+https://leetcode.com/problems/valid-palindrome-ii/description/
+https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/
+
+------------------------------DP------------------------------------------------------
+32
+5
+87
+91
+97
+139
+140
+329
+Android Unlock pattern
+124
+128
