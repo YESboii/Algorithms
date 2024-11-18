@@ -1,31 +1,28 @@
 import java.util.*;
 
 public class Test {
-    public static long getDataDependenceSum(long n) {
-        Set<Long> uniqueDays = new HashSet<>();
-
-        long k = 1;
-        while (k * k <= n) {
-            long x = n / k;
-            uniqueDays.add(x);
-            k++;
+    //aacecaaa$aaacecaa
+    public static String shortestPalindrome(String s) {
+        int n = s.length();
+        StringBuilder sb = new StringBuilder(s);
+        StringBuilder rev = new StringBuilder(s).reverse();
+        sb.append('$');
+        sb.append(rev);
+        int []lps = new int[sb.length()];
+        int prevLps = 0;
+        for(int i = 1;i <= 2 * n;){
+            if(sb.charAt(i) == sb.charAt(prevLps)){
+                prevLps++;
+                lps[i++] = prevLps;
+            }else if(prevLps == 0) i++;
+            else prevLps = lps[prevLps - 1];
         }
-
-        for (long i = 1; i <= n / k; i++) {
-            uniqueDays.add(i);
-        }
-
-        long sum = 0;
-        for (long day : uniqueDays) {
-            sum += day;
-        }
-
-        return sum;
+        if(lps[n - 1] == n) return s;
+        System.out.println(Arrays.toString(lps));
+        return rev.substring(0, n - lps[sb.length() - 1]) + s;
     }
 
-
     public static void main(String[] args) {
-        long n = 1;  // Example value
-        System.out.println("Data dependence sum for n = " + n + " is: " + getDataDependenceSum(n));
+        System.out.println(shortestPalindrome("abcd"));
     }
 }

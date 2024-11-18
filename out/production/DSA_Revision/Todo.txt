@@ -7,9 +7,8 @@ Meeting Room III
 1249
 819
 next permutation
-Bell Numbers & catalan numbers
-409 --> Strings
 2044
+https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/
 845
 1671
 https://practice.geeksforgeeks.org/contest/gfg-weekly-177-rated-contest/discussions
@@ -71,3 +70,7 @@ https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/descript
 Android Unlock pattern
 124
 128
+https://www.geeksforgeeks.org/problems/count-palindromic-subsequences/1
+-----------------------------------String Matching-----------------------------------------
+1044
+-----------------------------------1574-----------------------------------------
