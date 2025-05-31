@@ -3,9 +3,11 @@ package stack;
 import java.util.Stack;
 
 //very similar to I to Post
+//reverse the expression
+//convert it to postfix with criteria of only strictly < instead of =
 public class InfixToPrefix {
     public static void main(String[] args) {
-        infixToPrefix("a+b");
+        infixToPrefix("(a+b)*c^d^e");
     }
     
     static void infixToPrefix(String exp){
@@ -15,9 +17,11 @@ public class InfixToPrefix {
         expression.reverse();
         for (int i = 0; i < expression.length(); i++){
             char ch = expression.charAt(i);
-            if (ch == ')' || isOperand(ch)){
+            if (isOperand(ch)){
                 sb.append(ch);
-            } else if (ch=='(') {
+            }else if(ch == ')')
+                stack.push(ch);
+                else if (ch=='(') {
                 while (!stack.isEmpty() && stack.peek()!=')'){
                     sb.append(stack.pop());
                 }

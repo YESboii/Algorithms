@@ -1,4 +1,7 @@
 package Misc;
+
+import java.util.Arrays;
+
 /*
 COUNT THE NUMBER OF WAYS IN WHICH YOU CAN PARTITION A SET INTO NON-EMPTY DISJOINT SUBSETS SUCH THAT THE UNION OF THESE
 SUBSETS IS THE ORIGINAL SET
@@ -20,11 +23,12 @@ public class BellNumber {
             for(int j = 1;j <= i;j++){
                 bell[i][j] = bell[i][j - 1] + bell[i - 1][j - 1];
             }
+            System.out.println(Arrays.toString(bell[i]));
         }
         return bell[n][0];
     }
 
     public static void main(String[] args) {
-        System.out.println(countWays(5));
+        System.out.println(countWays(3));
     }
 }

@@ -29,6 +29,6 @@ public class ReverseNodesInGroupsOfK {
             curr= curr.next;
             k--;
         }
-        return curr!=null;
+        return curr != null;
     }
 }

@@ -1,4 +1,13 @@
 package LinkedList;
+/*
+*
+* List: 1 → 2 → 3 → 4 →     5
+                    ↑       ↓
+                    8 ← 7 ← 6   (cycle starts at 4)
+
+*
+*
+* */
 public class LinkedListCycleII {
 
     public int lengthOfCycle(ListNode head){

@@ -4,9 +4,10 @@ package dynamic_programming.strings;
 //https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/description/
 //https://leetcode.com/problems/delete-operation-for-two-strings/description/
 //https://leetcode.com/problems/shortest-common-supersequence/description/
+//https://leetcode.com/problems/uncrossed-lines/description/?envType=problem-list-v2&envId=dynamic-programming
 public class LCS {
     public static void main(String[] args) {
-        System.out.println(longestCommonSubsequence("mew", "xmye"));
+        System.out.println(longestCommonSubsequence("abcde", "ace"));
     }
     public static String  longestCommonSubsequence(String text1, String text2) {
         int n = text1.length(), m = text2.length();
@@ -20,12 +21,9 @@ public class LCS {
         //O(n + m)
         int i = 0, j = 0;
         StringBuilder sb = new StringBuilder();
-        while (dp[i][j] != 0){
-            if(text1.charAt(i) == text2.charAt(j)){
-                sb.append(text1.charAt(i));
-                i++;
-                j++;
-            }else if(dp[i + 1][j] > dp[i][j + 1]) i++;
+        while(dp[i][j] != 0){
+            if(text1.charAt(i) == text2.charAt(j)){ sb.append(text1.charAt(i));i++;j++;}
+            else if(dp[i + 1][j] > dp[i][j + 1]) i++;
             else j++;
         }
         return sb.toString();

@@ -2,6 +2,8 @@ package trie;
 //https://leetcode.com/problems/implement-trie-prefix-tree/
 //https://www.naukri.com/code360/problems/implement-trie_1387095
 //https://www.naukri.com/code360/problems/complete-string_2687860
+//https://leetcode.com/problems/longest-word-in-dictionary/description/
+//above is same complete string
 //If we need a faster search + prefix search then we need to incorporate hashmap at a cost of space
 public class Trie {
 

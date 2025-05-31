@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class InfixToPostfix {
     public static void main(String[] args) {
-        infixToPostfix("(a+b)*(c-d)");
+        infixToPostfix("(a+b)*c-d+e-");
     }
 
     static void infixToPostfix(String exp){

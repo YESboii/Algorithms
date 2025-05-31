@@ -1,4 +1,4 @@
-package strings;
+package stringmatching;
 //https://leetcode.com/problems/longest-happy-prefix/description/
 
 import java.util.Arrays;

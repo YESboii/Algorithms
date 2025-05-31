@@ -57,6 +57,7 @@ https://leetcode.com/problems/palindrome-permutation/
 https://leetcode.com/problems/insert-delete-getrandom-o1/
 https://leetcode.com/problems/valid-palindrome-ii/description/
 https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/
+//KADANE's -> 53, 918, 152
 
 ------------------------------DP------------------------------------------------------
 32
@@ -74,3 +75,4 @@ https://www.geeksforgeeks.org/problems/count-palindromic-subsequences/1
 -----------------------------------String Matching-----------------------------------------
 1044
 -----------------------------------1574-----------------------------------------
+2290(0-1 bfs)

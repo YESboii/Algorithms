@@ -3,6 +3,9 @@ package dynamic_programming.strings;
 
 //https://leetcode.com/problems/maximum-length-of-repeated-subarray/description/
 //https://www.geeksforgeeks.org/problems/longest-common-substring1452/1
+
+//It is better to think it as extending the substring if we have a match that is
+//move next character in both the strings add it to the current match.
 public class LongestCommonSubstring {
     public static void main(String[] args) {
         System.out.println(longestPalindrome("aacabdkacaa"));
@@ -33,6 +36,7 @@ public class LongestCommonSubstring {
 
         return maxLength;
     }
+
     public int naiveLongestCommonSubstring(String text1, String text2) {
         return helper(text1, text2, text1.length(), text2.length(), 0);
     }

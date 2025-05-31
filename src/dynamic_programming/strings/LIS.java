@@ -5,39 +5,42 @@ package dynamic_programming.strings;
 //https://www.geeksforgeeks.org/problems/longest-bitonic-subsequence0824/1
 //https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
 
+import java.util.Arrays;
+
 //using BS bacha h
 public class LIS {
     public static void main(String[] args) {
-        lengthOfLIS(new int[]{1001,0,3,2,3});
+        lengthOfLIS(new int[]{0,1,0,3,2,3});
     }
 
     public static int lengthOfLIS(int[] nums) {
         int n = nums.length;
-        int length = 1;
-        int []lisEndingAt = new int[n];
-        int []prev = new int[n];
+        int []lis = new int[n];// lis ending at i
+        int []prev = new int[n];// store prev idx
+        Arrays.fill(prev, -1);
+        int maxLength = 1;
         int idx = 0;
-        for(int i = 0;i < n;i++){
-            lisEndingAt[i] = 1;
-            prev[i]  = i;
-            for(int j = 0;j < i;j++){
-                if(nums[j] < nums[i] && 1 + lisEndingAt[j] > lisEndingAt[i]){
-                    lisEndingAt[i] = 1 + lisEndingAt[j];
+        for (int i = 0;i < n;i++){
+            lis[i] = 1;
+            for (int j = 0;j < i;j++){
+                if(nums[j] < nums[i] && lis[i] < lis[j] + 1) {
+                    lis[i] = lis[j] + 1;
                     prev[i] = j;
                 }
             }
-            if(lisEndingAt[i] > length){
-                length = lisEndingAt[i];
+            if(lis[i] > maxLength){
+                maxLength = lis[i];
                 idx = i;
             }
         }
+        System.out.println(idx);
+        System.out.println(Arrays.toString(prev));
         while (true){
-            System.out.print(nums[idx] + " ");
-            if (prev[idx] == idx) break;
+            System.out.println(nums[idx]);
             idx = prev[idx];
-
+            if (idx == -1) break;
         }
-        return length;
+        return maxLength;
     }
 }
 /*
